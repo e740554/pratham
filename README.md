@@ -8,6 +8,8 @@ This website showcases Pratham's innovative approach to green hydrogen productio
 - Responsive design
 - Interactive blockchain visualization
 - Detailed company roadmap
+- Founder's journey in "Our Story" section
+- Newsletter subscription functionality
 - Contact integration
 
 ### Technologies
@@ -25,4 +27,7 @@ Founder, Pratham
 ekansh@pratham.se
 
 ## About Pratham
-Pratham is pioneering sustainable hydrogen production using innovative waste-to-value technology.
+Pratham (meaning "first" in Hindi, akin to Protium - Hydrogen's first isotope) is pioneering sustainable hydrogen production using innovative waste-to-value technology. Founded by Ekansh Sharma, Pratham transforms wastewater into ultra-pure water for green hydrogen production in water-scarce regions with high solar potential.
+
+## About HyGOAT
+HyGOAT (Hydrogen Guarantee of Origin, Accountability & Transparency) is a blockchain-based certification platform designed in accordance with India's Green Hydrogen Certification (GHCI) standards. It provides transparent, tamper-resistant verification of hydrogen production with real-time monitoring from sensors to certification.
