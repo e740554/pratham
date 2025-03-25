@@ -1667,6 +1667,49 @@
                 });
             });
         });
+        // Newsletter form handling
+document.addEventListener('DOMContentLoaded', function() {
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterSuccess = document.getElementById('newsletter-success');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('newsletter-name').value;
+            const email = document.getElementById('newsletter-email').value;
+            
+            // Here you would typically send the data to your backend or newsletter service
+            // For now, we'll simulate a successful submission
+            
+            // Store the email in localStorage for demonstration purposes
+            localStorage.setItem('pratham_newsletter_email', email);
+            localStorage.setItem('pratham_newsletter_name', name);
+            
+            // Show success message
+            newsletterForm.style.display = 'none';
+            newsletterSuccess.style.display = 'flex';
+            
+            // Optional: Log to console (remove in production)
+            console.log(`Newsletter subscription: ${name} (${email})`);
+        });
+    }
+    
+    // Add smooth scroll for the new section
+    document.querySelectorAll('a[href="#our-story"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
     </script>
 </body>
 </html>
