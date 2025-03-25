@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pratham & HyGOAT - Where Water Meets Green Hydrogen</title>
+    <meta name="description" content="Pratham transforms wastewater into green hydrogen with innovative waste-to-value technology, complemented by HyGOAT's blockchain-based certification platform.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -651,6 +652,12 @@
         
         .footer-links ul li a:hover {
             color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-links ul li a {
+            transition: all 0.3s ease;
+            display: inline-block;
         }
         
         .footer-bottom {
@@ -1350,6 +1357,25 @@
                 
                 <p>Together, these complementary innovations form a complete solution for sustainable hydrogen production and verification, designed specifically for India's unique challenges and opportunities.</p>
                 
+                <div style="margin: 2.5rem 0; background-color: rgba(0, 153, 76, 0.05); padding: 1.5rem; border-radius: 10px;">
+                    <h4 style="margin-bottom: 1rem; color: var(--primary-color);">Key Policy Resources</h4>
+                    <p style="margin-bottom: 1rem;">Our work is aligned with India's strategic initiatives for green hydrogen development:</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://nghm.mnre.gov.in/" target="_blank" rel="noopener noreferrer" class="resource-button">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                            National Green Hydrogen Mission
+                        </a>
+                        <a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/09/20240906752526163.pdf" target="_blank" rel="noopener noreferrer" class="resource-button">
+                            <i class="fas fa-file-pdf pdf-icon" style="margin-right: 0.5rem; color: #ff4444;"></i>
+                            GHCI Framework
+                        </a>
+                        <a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2023/10/202310111124003507.pdf" target="_blank" rel="noopener noreferrer" class="resource-button">
+                            <i class="fas fa-file-pdf pdf-icon" style="margin-right: 0.5rem; color: #ff4444;"></i>
+                            Rajasthan Green Hydrogen Policy
+                        </a>
+                    </div>
+                </div>
+                
                 <div class="cta-container">
                     <a href="#contact" class="button">Partner With Us</a>
                     <p class="cta-text">We're seeking strategic investors who understand that sustainable hydrogen production and transparent verification are the foundation of the hydrogen economy. Join us in building the backbone of India's sustainable energy future.</p>
@@ -1518,9 +1544,9 @@
             <div class="footer-links">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="#">National Green Hydrogen Mission</a></li>
-                    <li><a href="#">GHCI Framework</a></li>
-                    <li><a href="#">Rajasthan Green Hydrogen Policy</a></li>
+                    <li><a href="https://nghm.mnre.gov.in/" target="_blank" rel="noopener noreferrer">National Green Hydrogen Mission <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a></li>
+                    <li><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/09/20240906752526163.pdf" target="_blank" rel="noopener noreferrer">GHCI Framework <i class="fas fa-file-pdf" style="color: #ff4444; font-size: 0.8rem;"></i></a></li>
+                    <li><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2023/10/202310111124003507.pdf" target="_blank" rel="noopener noreferrer">Rajasthan Green Hydrogen Policy <i class="fas fa-file-pdf" style="color: #ff4444; font-size: 0.8rem;"></i></a></li>
                     <li><a href="#">Hydrogen Technology Advancements</a></li>
                 </ul>
             </div>
@@ -1537,6 +1563,29 @@
             0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
             100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+        }
+        
+        .resource-button {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .resource-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .resource-button:hover .pdf-icon {
+            color: white !important;
         }
     </style>
 
