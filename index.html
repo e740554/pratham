@@ -1064,7 +1064,255 @@ tailwind.config = {
             </div>
         </div>
     </section>
-    <div id="about-us-container"></div>
+   <!-- About Us Section -->
+<section id="about-us" class="content-section">
+    <h2 class="section-title">Our Story</h2>
+    <p>Pratham & HyGOAT are essentially hardware and software materialized in tandem to kickstart the hydrogen economy in India as per the National Green Hydrogen Mission (NGHM).</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-top: 3rem;">
+        <!-- Founder Profile -->
+        <div>
+            <div style="background: var(--hygoat-gradient); padding: 4px; border-radius: 10px;">
+                <div style="background-color: white; border-radius: 8px; padding: 2rem; text-align: center;">
+                    <div style="width: 150px; height: 150px; margin: 0 auto; background: var(--hygoat-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold;">
+                        ES
+                    </div>
+                    <h3 style="margin-top: 1.5rem; color: var(--primary-color);">Ekansh Sharma</h3>
+                    <p>Founder, Pratham</p>
+                    
+                    <div style="margin-top: 2rem; text-align: left;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div style="background-color: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span>ekansh@pratham.se</span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <div style="background-color: var(--secondary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span>Jaipur, Rajasthan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tabs Section -->
+        <div>
+            <div class="about-tabs">
+                <div class="tab-navigation" style="display: flex; border-bottom: 1px solid #ddd; margin-bottom: 2rem;">
+                    <button class="tab-button active" data-tab="origins" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 500; position: relative; cursor: pointer;">Origins & Vision</button>
+                    <button class="tab-button" data-tab="pratham" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 500; position: relative; cursor: pointer;">Pratham Technology</button>
+                    <button class="tab-button" data-tab="hygoat" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 500; position: relative; cursor: pointer;">HyGOAT Platform</button>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <!-- Origins Tab -->
+                    <div id="origins" class="tab-pane active">
+                        <h3 style="font-size: 1.75rem; color: var(--text-color); margin-bottom: 1.5rem;">Born at the Intersection of Innovation</h3>
+                        <p style="margin-bottom: 1rem;">
+                            Pratham & HyGOAT are essentially hardware and software materialized in tandem by being bootstrapped to kickstart the hydrogen economy in INDIA as per the National Green Hydrogen Mission (NGHM).
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            <span style="font-weight: 600;">Pratham</span> means "first" in Hindi, akin to Protium - Hydrogen's elementary isotope with Atomic Number 1. This name embodies our pioneering approach to green hydrogen production, starting at the very foundation - water.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            <span style="font-weight: 600;">V2V</span> stands for "Vatten till Vätgas" – Swedish for "Water to Hydrogen" – as our concept was first conceived in Sweden before being brought to India to address the pressing need for sustainable hydrogen solutions.
+                        </p>
+                        <div style="background: linear-gradient(to right, rgba(0,153,76,0.1), rgba(0,102,204,0.1)); border-left: 4px solid var(--primary-color); padding: 1.5rem; margin-top: 2rem; border-radius: 0 8px 8px 0;">
+                            <p style="font-style: italic; color: var(--text-color);">
+                                "Our mission is to transform waste into value while solving India's hydrogen production challenges. Water is precious, and by recycling it for hydrogen production, we're creating a truly sustainable cycle."
+                            </p>
+                            <p style="margin-top: 1rem; text-align: right; font-size: 0.9rem; color: #666;">— Ekansh Sharma, Founder</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pratham Tab -->
+                    <div id="pratham" class="tab-pane">
+                        <h3 style="font-size: 1.75rem; color: var(--text-color); margin-bottom: 1.5rem;">Versatile Clean Hydrogen Production</h3>
+                        <p style="margin-bottom: 1rem;">
+                            Pratham is electrolyser agnostic, adaptable to different industries whether it's fertilizers, green steel, or refining feedstock for hydrogen derivatives. Our technology is designed to integrate with various electrolysis methods, ensuring versatility across applications.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            Our <span style="font-weight: 600;">unique selling proposition</span> is producing the purest water, hydrogen, and oxygen from waste streams. This waste-to-value approach creates a circular economy model that dramatically reduces both freshwater consumption and carbon emissions.
+                        </p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                            <div style="background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                                <div style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem;">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h4 style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Fertilizer Industry</h4>
+                                <p style="font-size: 0.9rem; color: #666;">Enabling green ammonia production with ultra-pure hydrogen</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                                <div style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem;">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <h4 style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Green Steel</h4>
+                                <p style="font-size: 0.9rem; color: #666;">Decarbonizing steel production with hydrogen-based direct reduction</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                                <div style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem;">
+                                    <i class="fas fa-oil-can"></i>
+                                </div>
+                                <h4 style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Refining</h4>
+                                <p style="font-size: 0.9rem; color: #666;">Supplying clean hydrogen for petroleum refining and desulfurization</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- HyGOAT Tab -->
+                    <div id="hygoat" class="tab-pane">
+                        <h3 style="font-size: 1.75rem; color: var(--text-color); margin-bottom: 1.5rem;">Digital Infrastructure for the Hydrogen Economy</h3>
+                        <p style="margin-bottom: 1rem;">
+                            HyGOAT is not just technology—it's essential market infrastructure that makes green hydrogen certification trustworthy, efficient, and future-proof. It stands as the backbone of verification in the emerging hydrogen marketplace.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            Through blockchain-powered verification, HyGOAT creates immutable records of hydrogen production methods, ensuring that "green" really means green. This is critical for:
+                        </p>
+                        
+                        <ul style="margin: 1.5rem 0; list-style: none;">
+                            <li style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                <div style="background-color: rgba(0,153,76,0.1); border-radius: 50%; padding: 0.25rem; margin-right: 0.75rem; margin-top: 0.25rem;">
+                                    <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                </div>
+                                <span>Premium pricing for genuinely green hydrogen</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                <div style="background-color: rgba(0,153,76,0.1); border-radius: 50%; padding: 0.25rem; margin-right: 0.75rem; margin-top: 0.25rem;">
+                                    <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                </div>
+                                <span>Compliance with India's Green Hydrogen Certification framework</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                <div style="background-color: rgba(0,153,76,0.1); border-radius: 50%; padding: 0.25rem; margin-right: 0.75rem; margin-top: 0.25rem;">
+                                    <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                </div>
+                                <span>Unlocking international markets for Indian hydrogen exports</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start;">
+                                <div style="background-color: rgba(0,153,76,0.1); border-radius: 50%; padding: 0.25rem; margin-right: 0.75rem; margin-top: 0.25rem;">
+                                    <i class="fas fa-check" style="color: var(--primary-color);"></i>
+                                </div>
+                                <span>Enabling carbon credit generation and trading</span>
+                            </li>
+                        </ul>
+                        
+                        <div style="background-color: rgba(0,102,204,0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary-color); margin-top: 2rem;">
+                            <p style="color: var(--text-color);">
+                                We're seeking strategic investors who understand that transparent verification is the foundation of the hydrogen economy. Partner with us to build the backbone of India's sustainable energy future.
+                            </p>
+                            <div style="margin-top: 1.5rem;">
+                                <a href="#contact" class="button" style="background-color: var(--secondary-color); border-color: var(--secondary-color);">
+                                    Become a Strategic Partner →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Strategic Focus -->
+    <div style="margin-top: 5rem; position: relative; text-align: center;">
+        <div style="position: absolute; top: 50%; left: 0; right: 0; height: 1px; background-color: #ddd;"></div>
+        <span style="position: relative; background-color: var(--background-color); padding: 0 1rem; font-size: 0.9rem; color: #777;">Our Strategic Focus</span>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+        <div class="feature-card">
+            <div class="feature-content">
+                <div class="feature-icon" style="color: var(--primary-color);">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Sustainable by Design</h3>
+                <p>Every aspect of our technology is designed with sustainability in mind, from wastewater reclamation to energy efficiency.</p>
+            </div>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-content">
+                <div class="feature-icon" style="color: var(--secondary-color);">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Industry Integration</h3>
+                <p>Our systems are designed to integrate with existing industrial infrastructure, reducing transition costs and accelerating adoption.</p>
+            </div>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-content">
+                <div class="feature-icon" style="color: var(--accent-color);">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <h3>National Mission Aligned</h3>
+                <p>Fully aligned with India's National Green Hydrogen Mission, helping the country achieve its ambitious clean energy targets.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add this JavaScript at the end of your HTML file, just before the closing </body> tag -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and panes
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Show the corresponding tab pane
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    });
+</script>
+
+<!-- Add this CSS to your existing styles section in the <head> -->
+<style>
+    /* Tab styling */
+    .tab-button {
+        color: #777;
+        transition: color 0.3s ease;
+    }
+    
+    .tab-button.active {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+    }
+    
+    .tab-button:hover {
+        color: var(--primary-color);
+    }
+    
+    .tab-pane {
+        display: none;
+    }
+    
+    .tab-pane.active {
+        display: block;
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
     <section id="contact" class="contact">
         <div class="contact-content">
             <div class="contact-form">
