@@ -1201,7 +1201,7 @@
                 </button>
                 <ul id="navMenu">
                     <button class="close-menu" id="closeMenu">
-                        <i class="fas fa-times"></i>
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#what-we-do" class="nav-link">Our Innovation</a></li>
@@ -1511,13 +1511,13 @@
                 <h3>Stay Updated on India's Green Hydrogen Revolution</h3>
                 <p>Subscribe to our newsletter for the latest updates on green hydrogen developments, policy changes, and Pratham's innovations.</p>
                 
-                <form id="newsletter-form" class="newsletter-form">
+                <form id="newsletter-form" class="newsletter-form" name="newsletter" netlify>
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" id="newsletter-name" placeholder="Your Name" required>
+                            <input type="text" id="newsletter-name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="newsletter-email" placeholder="Your Email Address" required>
+                            <input type="email" id="newsletter-email" name="email" placeholder="Your Email Address" required>
                         </div>
                         <button type="submit" class="newsletter-button">
                             <span>Subscribe</span>
@@ -1525,7 +1525,7 @@
                         </button>
                     </div>
                     <div class="form-checkbox">
-                        <input type="checkbox" id="newsletter-consent" required>
+                        <input type="checkbox" id="newsletter-consent" name="consent" required>
                         <label for="newsletter-consent">I agree to receive updates about green hydrogen developments and Pratham's innovations.</label>
                     </div>
                 </form>
@@ -1545,25 +1545,25 @@
                 <h2 class="section-title">Get In Touch</h2>
                 <p style="margin-bottom: 2rem;">Interested in our green hydrogen solutions or HyGOAT certification platform? Let's start a conversation.</p>
                 
-                <form>
+                <form name="contact" netlify>
                     <div class="form-group">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" placeholder="Enter your name">
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Enter your email">
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
                     </div>
                     
                     <div class="form-group">
                         <label for="organization">Organization</label>
-                        <input type="text" id="organization" placeholder="Enter your organization">
+                        <input type="text" id="organization" name="organization" placeholder="Enter your organization">
                     </div>
                     
                     <div class="form-group">
                         <label for="interest">I'm interested in:</label>
-                        <select id="interest" style="width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ddd;">
+                        <select id="interest" name="interest" style="width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ddd;">
                             <option value="">Select your interest</option>
                             <option value="pratham">Pratham Hydrogen Solution</option>
                             <option value="hygoat">HyGOAT Certification Platform</option>
@@ -1575,7 +1575,7 @@
                     
                     <div class="form-group">
                         <label for="message">Your Message</label>
-                        <textarea id="message" rows="5" placeholder="Tell us about your project or inquiry"></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or inquiry"></textarea>
                     </div>
                     
                     <button type="submit" class="button" style="border: none; cursor: pointer; width: 100%;">Send Message</button>
