@@ -372,6 +372,7 @@ header.scrolled .mobile-menu-btn {
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    z-index: 10; /* Ensure nodes appear above the connection lines */
 }
 
 .blockchain-node:hover, .blockchain-node:focus {
@@ -390,6 +391,7 @@ header.scrolled .mobile-menu-btn {
     transform-origin: 0 0;
     z-index: 1;
     will-change: transform, width;
+    border-radius: 2px;
 }
 
 .hygoat-features {

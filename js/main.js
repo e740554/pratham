@@ -263,10 +263,67 @@ function initializeBlockchainDiagram() {
             const targetRect = target.getBoundingClientRect();
             const diagramRect = blockchainDiagram.getBoundingClientRect();
             
-            const sourceX = sourceRect.left + sourceRect.width / 2 - diagramRect.left;
-            const sourceY = sourceRect.top + sourceRect.height / 2 - diagramRect.top;
-            const targetX = targetRect.left + targetRect.width / 2 - diagramRect.left;
-            const targetY = targetRect.top + targetRect.height / 2 - diagramRect.top;
+            // Calculate positions relative to the diagram
+            // Use positions based on the edges of the boxes for smoother connections
+            let sourceX, sourceY, targetX, targetY;
+            
+            // Horizontal connection (top row to top row, or bottom row to bottom row)
+            if (Math.abs(sourceRect.top - targetRect.top) < 50) {
+                // Determine which side of each box to connect from
+                if (sourceRect.left < targetRect.left) {
+                    // Source is to the left of target
+                    sourceX = sourceRect.right - diagramRect.left;
+                    targetX = targetRect.left - diagramRect.left;
+                } else {
+                    // Source is to the right of target
+                    sourceX = sourceRect.left - diagramRect.left;
+                    targetX = targetRect.right - diagramRect.left;
+                }
+                
+                // Connect from the middle height of each box
+                sourceY = sourceRect.top + sourceRect.height / 2 - diagramRect.top;
+                targetY = targetRect.top + targetRect.height / 2 - diagramRect.top;
+            }
+            // Vertical connection (connecting boxes on different rows)
+            else if (Math.abs(sourceRect.left - targetRect.left) < 50) {
+                // Connect from the center of the bottom of the top box to the center of the top of the bottom box
+                if (sourceRect.top < targetRect.top) {
+                    // Source is above target
+                    sourceX = sourceRect.left + sourceRect.width / 2 - diagramRect.left;
+                    sourceY = sourceRect.bottom - diagramRect.top;
+                    targetX = targetRect.left + targetRect.width / 2 - diagramRect.left;
+                    targetY = targetRect.top - diagramRect.top;
+                } else {
+                    // Source is below target
+                    sourceX = sourceRect.left + sourceRect.width / 2 - diagramRect.left;
+                    sourceY = sourceRect.top - diagramRect.top;
+                    targetX = targetRect.left + targetRect.width / 2 - diagramRect.left;
+                    targetY = targetRect.bottom - diagramRect.top;
+                }
+            }
+            // Diagonal connection
+            else {
+                // Start from the appropriate corner depending on relative positions
+                if (sourceRect.top < targetRect.top) {
+                    // Source is above target
+                    sourceY = sourceRect.bottom - diagramRect.top;
+                    targetY = targetRect.top - diagramRect.top;
+                } else {
+                    // Source is below target
+                    sourceY = sourceRect.top - diagramRect.top;
+                    targetY = targetRect.bottom - diagramRect.top;
+                }
+                
+                if (sourceRect.left < targetRect.left) {
+                    // Source is to the left of target
+                    sourceX = sourceRect.right - diagramRect.left;
+                    targetX = targetRect.left - diagramRect.left;
+                } else {
+                    // Source is to the right of target
+                    sourceX = sourceRect.left - diagramRect.left;
+                    targetX = targetRect.right - diagramRect.left;
+                }
+            }
             
             const angle = Math.atan2(targetY - sourceY, targetX - sourceX);
             const length = Math.sqrt(Math.pow(targetX - sourceX, 2) + Math.pow(targetY - sourceY, 2));
@@ -773,7 +830,8 @@ function initializeFormValidation() {
         
         // Enhanced form submission
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Only prevent default for client-side validation
+            // Let the form submit normally to Netlify otherwise
             
             // Validate all fields
             let isValid = true;
@@ -791,55 +849,38 @@ function initializeFormValidation() {
                 }
             });
             
-            // If valid, show loading state and submit
-            if (isValid) {
-                // We can submit the form now - for Netlify it will work automatically
-                // First show loading overlay
-                loadingOverlay.style.display = 'flex';
-                form.classList.add('form-submitted');
+            // If not valid, prevent form submission and show errors
+            if (!isValid) {
+                e.preventDefault();
                 
-                // Update live region
-                liveRegion.textContent = 'Submitting form, please wait...';
-                
-                // For demo - simulate submission and success
-                setTimeout(() => {
-                    loadingOverlay.style.display = 'none';
-                    form.classList.remove('form-submitted');
-                    
-                    // Show success message based on form type
-                    if (form.id === 'newsletter-form') {
-                        const successElement = document.getElementById('newsletter-success');
-                        if (successElement) {
-                            form.style.display = 'none';
-                            successElement.style.display = 'flex';
-                            
-                            // Update live region
-                            liveRegion.textContent = 'Form submitted successfully! Thank you for subscribing.';
-                        }
-                    } else {
-                        // For contact form, show inline success
-                        form.innerHTML = `
-                            <div class="form-success" style="text-align: center;">
-                                <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
-                                <h3>Message Sent!</h3>
-                                <p>Thank you for contacting us. We'll respond to your inquiry shortly.</p>
-                            </div>
-                        `;
-                        
-                        // Update live region
-                        liveRegion.textContent = 'Form submitted successfully! Thank you for your message.';
-                    }
-                    
-                    // In a real implementation, we'd actually submit the form here
-                    // form.submit();
-                }, 1500);
-            } else {
                 // Update live region with error message
                 liveRegion.textContent = 'There are errors in the form. Please correct them and try again.';
                 
                 // Focus first invalid field
                 const firstInvalid = form.querySelector('.form-group.error input, .form-group.error textarea, .form-group.error select, .form-checkbox.error input');
                 if (firstInvalid) firstInvalid.focus();
+            } else {
+                // Form is valid, we'll show a brief loading overlay but not interrupt the normal form submission
+                loadingOverlay.style.display = 'flex';
+                
+                // Update live region
+                liveRegion.textContent = 'Submitting form, please wait...';
+                
+                // For the newsletter form, we'll handle the success message visibility separately
+                if (form.id === 'newsletter-form') {
+                    const successElement = document.getElementById('newsletter-success');
+                    if (successElement) {
+                        // We'll let Netlify handle the submission, but set up a way to show the success message
+                        // This relies on the form actually submitting and redirecting back to the page
+                        if (window.location.search.includes('success=true')) {
+                            form.style.display = 'none';
+                            successElement.style.display = 'flex';
+                        }
+                    }
+                }
+                
+                // Let the form submit normally to Netlify
+                // The page will refresh or redirect based on Netlify's form handling
             }
         });
         
