@@ -16,13 +16,15 @@
             --golden-ratio: 1.618;
             --dark-bg: #1a1a1a;
             --hygoat-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --font-primary: 'Open Sans', 'Segoe UI', Tahoma, Geneva, sans-serif;
+            --font-secondary: 'Roboto', Arial, sans-serif;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--font-primary);
         }
         
         body {
@@ -708,6 +710,65 @@
             }
         }
         
+        /* Sensor Display - scrollable */
+        .data-stream-container {
+            height: 200px;
+            overflow-y: auto;
+            padding-right: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(46, 204, 113, 0.6) rgba(0, 0, 0, 0.1);
+        }
+        
+        .data-stream-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .data-stream-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+        }
+        
+        .data-stream-container::-webkit-scrollbar-thumb {
+            background-color: rgba(46, 204, 113, 0.6);
+            border-radius: 3px;
+        }
+        
+        .data-stream {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #2ecc71;
+            line-height: 1.6;
+        }
+        
+        .data-stream div {
+            margin-bottom: 5px;
+        }
+        
+        /* Swedish minimalism enhancements */
+        body {
+            letter-spacing: 0.02em;
+        }
+        
+        .section-title {
+            letter-spacing: -0.02em;
+            font-weight: 600;
+        }
+        
+        .feature-card, .hygoat-feature, .timeline-content, .contact-form {
+            border-radius: 4px;
+        }
+        
+        .partner-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .partner-link:hover {
+            color: var(--accent-color);
+        }
+        
         /* Responsive styles */
         @media (max-width: 992px) {
             .contact-content,
@@ -816,7 +877,7 @@
 
 .story-image {
     position: relative;
-    border-radius: 10px;
+    border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -853,6 +914,8 @@
     color: var(--primary-color);
     margin: 2rem 0 1rem;
     font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 .story-content h3:first-child {
@@ -896,7 +959,7 @@
 .mission-item {
     background-color: var(--background-color);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 4px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -928,7 +991,7 @@
 .cta-container {
     background-color: rgba(0, 102, 204, 0.05);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 4px;
     margin-top: 3rem;
     display: flex;
     align-items: center;
@@ -965,6 +1028,8 @@
 .newsletter-content h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 .newsletter-content p {
@@ -976,7 +1041,7 @@
 .newsletter-form {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 .form-row {
@@ -993,7 +1058,7 @@
 .newsletter-form input[type="email"] {
     width: 100%;
     padding: 0.75rem;
-    border-radius: 5px;
+    border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
@@ -1008,7 +1073,7 @@
     color: white;
     border: none;
     padding: 0 1.5rem;
-    border-radius: 5px;
+    border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1037,7 +1102,7 @@
     background-color: rgba(46, 204, 113, 0.2);
     border: 1px solid rgba(46, 204, 113, 0.5);
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -1047,6 +1112,51 @@
 .newsletter-success i {
     font-size: 2rem;
     color: #2ecc71;
+}
+
+/* Resource buttons */
+.resource-button {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: var(--primary-color);
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.resource-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.resource-button:hover .pdf-icon {
+    color: white !important;
+}
+
+/* Partner links styling */
+.partner-badge {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.partner-badge:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
 /* Responsive Styles */
@@ -1210,7 +1320,7 @@
                 </div>
             </div>
             
-            <div class="arduino-integration" style="background-color: rgba(255, 255, 255, 0.1); margin-top: 3rem; padding: 2rem; border-radius: 10px; display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div class="arduino-integration" style="background-color: rgba(255, 255, 255, 0.1); margin-top: 3rem; padding: 2rem; border-radius: 4px; display: flex; flex-wrap: wrap; gap: 2rem;">
                 <div style="flex: 3; min-width: 300px;">
                     <h3 style="margin-bottom: 1rem; color: white;">Hardware Integration</h3>
                     <p>Edge connectivity creates a continuous digital thread from sensors to certification. Our proprietary protocols transform ordinary control systems into verification engines with real-time monitoring of:</p>
@@ -1221,19 +1331,29 @@
                         <li style="margin-bottom: 0.5rem;"><i class="fas fa-flask" style="margin-right: 0.5rem;"></i> Purity analysis</li>
                     </ul>
                 </div>
-                <div style="flex: 2; min-width: 250px; background-color: rgba(0, 0, 0, 0.2); border-radius: 8px; padding: 1rem; position: relative; min-height: 200px;">
-                    <div class="arduino-monitor" style="position: relative; height: 100%; overflow: hidden;">
-                        <div class="data-stream" style="position: absolute; top: 20px; left: 20px; font-family: monospace; font-size: 0.9rem; color: #2ecc71;">
-                            <div>> Initializing secure connection...</div>
-                            <div>> Reading sensor array...</div>
-                            <div>> Temperature: 75.2°C</div>
-                            <div>> Pressure: 2.4 MPa</div>
-                            <div>> Flow rate: 12.7 L/min</div>
-                            <div>> Energy input: 5.3 kWh</div>
-                            <div>> H₂ purity: 99.97%</div>
-                            <div>> Verifying against GHCI standards...</div>
-                            <div>> CO₂e calculation: 1.87 kg/kg H₂</div>
-                            <div>> Status: <span style="color: #2ecc71;">✓ COMPLIANT</span></div>
+                <div style="flex: 2; min-width: 250px; background-color: rgba(0, 0, 0, 0.2); border-radius: 4px; padding: 1rem; position: relative; min-height: 200px;">
+                    <div class="arduino-monitor" style="position: relative; height: 100%;">
+                        <div class="data-stream-container">
+                            <div class="data-stream">
+                                <div>> Initializing secure connection...</div>
+                                <div>> Reading sensor array...</div>
+                                <div>> Temperature: 75.2°C</div>
+                                <div>> Pressure: 2.4 MPa</div>
+                                <div>> Flow rate: 12.7 L/min</div>
+                                <div>> Energy input: 5.3 kWh</div>
+                                <div>> H₂ purity: 99.97%</div>
+                                <div>> Verifying against GHCI standards...</div>
+                                <div>> CO₂e calculation: 1.87 kg/kg H₂</div>
+                                <div>> Status: <span style="color: #2ecc71;">✓ COMPLIANT</span></div>
+                                <div>> Logging data to blockchain...</div>
+                                <div>> Transaction hash: 0x7f2c8...</div>
+                                <div>> Certificate ID: GH-2025-03-156</div>
+                                <div>> System checking: membrane integrity</div>
+                                <div>> Membrane pressure differential: 0.5 MPa</div>
+                                <div>> Water quality: 99.99% pure</div>
+                                <div>> System efficiency: 83.7%</div>
+                                <div>> Projected annual CO₂ savings: 14.2 tonnes</div>
+                            </div>
                         </div>
                         <div class="pulse" style="position: absolute; bottom: 20px; right: 20px; width: 15px; height: 15px; background-color: #2ecc71; border-radius: 50%; animation: pulse 2s infinite;"></div>
                     </div>
@@ -1357,7 +1477,7 @@
                 
                 <p>Together, these complementary innovations form a complete solution for sustainable hydrogen production and verification, designed specifically for India's unique challenges and opportunities.</p>
                 
-                <div style="margin: 2.5rem 0; background-color: rgba(0, 153, 76, 0.05); padding: 1.5rem; border-radius: 10px;">
+                <div style="margin: 2.5rem 0; background-color: rgba(0, 153, 76, 0.05); padding: 1.5rem; border-radius: 4px;">
                     <h4 style="margin-bottom: 1rem; color: var(--primary-color);">Key Policy Resources</h4>
                     <p style="margin-bottom: 1rem;">Our work is aligned with India's strategic initiatives for green hydrogen development:</p>
                     <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
@@ -1443,7 +1563,7 @@
                     
                     <div class="form-group">
                         <label for="interest">I'm interested in:</label>
-                        <select id="interest" style="width: 100%; padding: 0.75rem; border-radius: 5px; border: 1px solid #ddd;">
+                        <select id="interest" style="width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ddd;">
                             <option value="">Select your interest</option>
                             <option value="pratham">Pratham Hydrogen Solution</option>
                             <option value="hygoat">HyGOAT Certification Platform</option>
@@ -1508,8 +1628,9 @@
                 <div style="margin-top: 2rem;">
                     <h4 style="margin-bottom: 1rem;">Strategic Partners</h4>
                     <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-                        <div style="background-color: #f0f0f0; padding: 0.5rem 1rem; border-radius: 5px; font-size: 0.9rem;">Ekavikalp</div>
-                        <div style="background-color: #f0f0f0; padding: 0.5rem 1rem; border-radius: 5px; font-size: 0.9rem;">Scarab/CWT</div>
+                        <a href="#" class="partner-badge">Ekavikalp</a>
+                        <a href="https://scarab.se/" target="_blank" rel="noopener noreferrer" class="partner-badge">Scarab Development</a>
+                        <a href="https://circularwatertechnologies.com/" target="_blank" rel="noopener noreferrer" class="partner-badge">CWT</a>
                     </div>
                 </div>
             </div>
@@ -1563,29 +1684,6 @@
             0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
             100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
-        }
-        
-        .resource-button {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            color: var(--primary-color);
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .resource-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .resource-button:hover .pdf-icon {
-            color: white !important;
         }
     </style>
 
@@ -1758,6 +1856,40 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+    
+    // Scroll animation for the data stream (add new data periodically)
+    const dataStream = document.querySelector('.data-stream');
+    const dataStreamContainer = document.querySelector('.data-stream-container');
+    
+    if (dataStream && dataStreamContainer) {
+        // Auto-scroll to bottom initially
+        dataStreamContainer.scrollTop = dataStreamContainer.scrollHeight;
+        
+        // Simulate new data coming in every few seconds
+        setInterval(function() {
+            const randomMessages = [
+                "> Checking renewable energy source...",
+                "> Solar input: 6.2 kWh",
+                "> Wind input: 0.8 kWh",
+                "> Grid stability: 99.3%",
+                "> Recirculation pump: active",
+                "> Membrane cycle: 42/100",
+                "> Water treatment stage: 3",
+                "> Waste heat recovery: 89.7%",
+                "> CO₂ offset verified: +0.24 tonnes",
+                "> New certification batch initiated"
+            ];
+            
+            const newData = document.createElement('div');
+            newData.textContent = randomMessages[Math.floor(Math.random() * randomMessages.length)];
+            dataStream.appendChild(newData);
+            
+            // Auto-scroll to show new data if already at bottom
+            if (dataStreamContainer.scrollTop + dataStreamContainer.clientHeight >= dataStreamContainer.scrollHeight - 50) {
+                dataStreamContainer.scrollTop = dataStreamContainer.scrollHeight;
+            }
+        }, 5000);
+    }
 });
     </script>
 </body>
