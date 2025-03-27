@@ -1,0 +1,25 @@
+[build]
+  publish = "."
+
+[forms]
+  # Newsletter form
+  [forms.newsletter]
+    name = "newsletter"
+    fields = [
+      { name = "name", type = "text", required = true },
+      { name = "email", type = "email", required = true },
+      { name = "consent", type = "checkbox", required = true }
+    ]
+    success_url = "/success.html?form=newsletter"
+
+  # Contact form
+  [forms.contact]
+    name = "contact" 
+    fields = [
+      { name = "name", type = "text", required = true },
+      { name = "email", type = "email", required = true },
+      { name = "organization", type = "text", required = false },
+      { name = "interest", type = "select", required = true },
+      { name = "message", type = "textarea", required = true }
+    ]
+    success_url = "/success.html?form=contact"

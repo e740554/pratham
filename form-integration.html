@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- 
+  IMPORTANT: This is a reference file showing just the form-related sections with updates.
+  DO NOT replace your entire index.html with this file. Only update the form sections.
+-->
+
+<!-- Newsletter Form Section (Updated) -->
+<div class="newsletter-section">
+    <div class="newsletter-container">
+        <div class="newsletter-content">
+            <h3>Stay Updated on India's Green Hydrogen Revolution</h3>
+            <p>Subscribe to our newsletter for the latest updates on green hydrogen developments, policy changes, and Pratham's innovations.</p>
+            
+            <form id="newsletter-form" class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="newsletter">
+                <div class="hidden" style="display:none">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="newsletter-name" name="name" placeholder="Your Name" required aria-label="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" name="email" placeholder="Your Email Address" required aria-label="Email Address">
+                    </div>
+                    <button type="submit" class="newsletter-button">
+                        <span>Subscribe</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="newsletter-consent" name="consent" required>
+                    <label for="newsletter-consent">I agree to receive updates about green hydrogen developments and Pratham's innovations.</label>
+                </div>
+            </form>
+            
+            <div id="newsletter-success" class="newsletter-success" style="display: none;">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                <p>Thank you for subscribing! You'll receive your first update soon.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Form Section (Updated) -->
+<div class="contact-form">
+    <h2 class="section-title" id="contact-title">Get In Touch</h2>
+    <p style="margin-bottom: 2rem;">Interested in our green hydrogen solutions or HyGOAT certification platform? Let's start a conversation.</p>
+    
+    <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+        <div class="hidden" style="display:none">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </div>
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" aria-required="true">
+            <div class="error-message" aria-live="polite"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" aria-required="true">
+            <div class="error-message" aria-live="polite"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="organization">Organization</label>
+            <input type="text" id="organization" name="organization" placeholder="Enter your organization">
+            <div class="error-message" aria-live="polite"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="interest">I'm interested in:</label>
+            <select id="interest" name="interest" aria-required="true">
+                <option value="">Select your interest</option>
+                <option value="pratham">Pratham Hydrogen Solution</option>
+                <option value="hygoat">HyGOAT Certification Platform</option>
+                <option value="both">Both Technologies</option>
+                <option value="partnership">Strategic Partnership</option>
+                <option value="investment">Investment Opportunities</option>
+            </select>
+            <div class="error-message" aria-live="polite"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or inquiry" aria-required="true"></textarea>
+            <div class="error-message" aria-live="polite"></div>
+        </div>
+        
+        <button type="submit" class="button" style="border: none; cursor: pointer; width: 100%;">Send Message</button>
+    </form>
+</div>
+
+<!-- Script Imports (Add before closing body tag) -->
+<!-- Make sure to load the form-handler.js AFTER main.js -->
+<script src="js/main.js" defer></script>
+<script src="js/form-handler.js" defer></script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submitted Successfully - Pratham & HyGOAT</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .success-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            text-align: center;
+        }
+        .success-icon {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h1>Thank You!</h1>
+        <div id="newsletter-message" style="display: none;">
+            <p>Thanks for subscribing to our newsletter!</p>
+            <p>You'll receive updates on green hydrogen developments and Pratham's innovations.</p>
+        </div>
+        <div id="contact-message" style="display: none;">
+            <p>Your message has been submitted successfully.</p>
+            <p>We'll be in touch with you shortly to discuss your inquiry in more detail.</p>
+        </div>
+        <div id="generic-message">
+            <p>Your form has been submitted successfully.</p>
+            <p>We'll be in touch with you shortly.</p>
+        </div>
+        <div style="margin-top: 2rem;">
+            <a href="/" class="button">Return to Homepage</a>
+        </div>
+    </div>
+
+    <script>
+        // Get form parameter from URL
+        const params = new URLSearchParams(window.location.search);
+        const formType = params.get('form');
+        
+        // Show appropriate message based on form type
+        if (formType === 'newsletter') {
+            document.getElementById('newsletter-message').style.display = 'block';
+            document.getElementById('contact-message').style.display = 'none';
+            document.getElementById('generic-message').style.display = 'none';
+        } else if (formType === 'contact') {
+            document.getElementById('newsletter-message').style.display = 'none';
+            document.getElementById('contact-message').style.display = 'block';
+            document.getElementById('generic-message').style.display = 'none';
+        } else {
+            document.getElementById('newsletter-message').style.display = 'none';
+            document.getElementById('contact-message').style.display = 'none';
+            document.getElementById('generic-message').style.display = 'block';
+        }
+        
+        // Auto-redirect back to homepage after 5 seconds
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Netlify redirect rules
+/* /index.html 200
+
+# Form success redirects 
+/success/newsletter /success.html?form=newsletter 301
+/success/contact /success.html?form=contact 301

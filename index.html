@@ -50,6 +50,21 @@
     <link rel="preload" href="js/main.js" as="script">
 </head>
 <body>
+    <!-- Netlify Forms Detection - Hidden Form Placeholders -->
+    <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="checkbox" name="consent" />
+        <input name="bot-field" />
+    </form>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="organization" />
+        <select name="interest"></select>
+        <textarea name="message"></textarea>
+        <input name="bot-field" />
+    </form>
     <!-- Skip to main content for accessibility -->
     <a href="#what-we-do" class="skip-link">Skip to main content</a>
     
@@ -381,7 +396,7 @@
                         <h3>Stay Updated on India's Green Hydrogen Revolution</h3>
                         <p>Subscribe to our newsletter for the latest updates on green hydrogen developments, policy changes, and Pratham's innovations.</p>
                         
-                        <form id="newsletter-form" class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+                        <form id="newsletter-form" class="newsletter-form" name="newsletter" method="POST" netlify="true" data-netlify="true" action="/success.html?form=newsletter">
                             <input type="hidden" name="form-name" value="newsletter">
                             <div class="hidden" style="display:none">
                                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -419,7 +434,7 @@
                     <h2 class="section-title" id="contact-title">Get In Touch</h2>
                     <p style="margin-bottom: 2rem;">Interested in our green hydrogen solutions or HyGOAT certification platform? Let's start a conversation.</p>
                     
-                    <form name="contact" method="POST" data-netlify="true">
+                    <form name="contact" method="POST" netlify="true" data-netlify="true" action="/success.html?form=contact">
                         <input type="hidden" name="form-name" value="contact">
                         <div class="hidden" style="display:none">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>

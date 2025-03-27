@@ -12,7 +12,58 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeDataStream();
     initializeFormValidation();
     initializeServiceWorker();
+    
+    // Check for form submission success parameters in URL
+    checkFormSubmissionSuccess();
 });
+
+/**
+ * Check for form submission success in URL parameters
+ */
+function checkFormSubmissionSuccess() {
+    // Newsletter form success
+    if (window.location.search.includes('success=newsletter')) {
+        const newsletterForm = document.getElementById('newsletter-form');
+        const successElement = document.getElementById('newsletter-success');
+        
+        if (newsletterForm && successElement) {
+            newsletterForm.style.display = 'none';
+            successElement.style.display = 'flex';
+            
+            // Scroll to success message
+            setTimeout(() => {
+                successElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+        }
+    }
+    
+    // Contact form success
+    if (window.location.search.includes('success=contact')) {
+        const contactForm = document.querySelector('.contact-form form');
+        const contactFormContainer = document.querySelector('.contact-form');
+        
+        if (contactForm && contactFormContainer) {
+            const successMessage = document.createElement('div');
+            successMessage.className = 'newsletter-success';
+            successMessage.style.display = 'flex';
+            successMessage.innerHTML = `
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                <p>Thank you for your message! We'll get back to you shortly.</p>
+            `;
+            
+            // Replace form with success message
+            contactFormContainer.innerHTML = '';
+            contactFormContainer.appendChild(document.createElement('h2')).className = 'section-title';
+            contactFormContainer.querySelector('h2').textContent = 'Message Sent!';
+            contactFormContainer.appendChild(successMessage);
+            
+            // Scroll to success message
+            setTimeout(() => {
+                contactFormContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+        }
+    }
+}
 
 /**
  * Navigation functionality
@@ -866,15 +917,38 @@ function initializeFormValidation() {
                 // Update live region
                 liveRegion.textContent = 'Submitting form, please wait...';
                 
-                // For the newsletter form, we'll handle the success message visibility separately
+                // For the forms, we'll handle the success message visibility separately
                 if (form.id === 'newsletter-form') {
                     const successElement = document.getElementById('newsletter-success');
                     if (successElement) {
                         // We'll let Netlify handle the submission, but set up a way to show the success message
                         // This relies on the form actually submitting and redirecting back to the page
-                        if (window.location.search.includes('success=true')) {
+                        if (window.location.search.includes('success=newsletter')) {
                             form.style.display = 'none';
                             successElement.style.display = 'flex';
+                        }
+                    }
+                }
+                
+                // Check for contact form success
+                if (form.getAttribute('name') === 'contact') {
+                    if (window.location.search.includes('success=contact')) {
+                        // Create success message for contact form
+                        const contactFormContainer = document.querySelector('.contact-form');
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'newsletter-success';
+                        successMessage.style.display = 'flex';
+                        successMessage.innerHTML = `
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <p>Thank you for your message! We'll get back to you shortly.</p>
+                        `;
+                        
+                        // Replace form with success message
+                        if (contactFormContainer) {
+                            contactFormContainer.innerHTML = '';
+                            contactFormContainer.appendChild(document.createElement('h2')).className = 'section-title';
+                            contactFormContainer.querySelector('h2').textContent = 'Message Sent!';
+                            contactFormContainer.appendChild(successMessage);
                         }
                     }
                 }
